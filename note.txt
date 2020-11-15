@@ -1,0 +1,3 @@
+x[] là chiều cao đáy của cột trong ngoặc
+xKhoi, yKhoi là vị trí đỉnh của khối đang hạ xuống
+ttt là giá trị return của random trong continue()

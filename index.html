@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+    />
+    <title>Title</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main__game">
+        <canvas id="game" width="400" height="800"></canvas>
+      </div>
+      <div class="main__sub">
+        <canvas id="ready" width="160" height="160"></canvas>
+      </div>
+    </div>
+
+    <script src="./js/const.js"></script>
+    <script src="./js/clear.js"></script>
+    <script src="./js/gameover.js"></script>
+    <script src="./js/random.js"></script>
+    <script src="./js/setcolor.js"></script>
+    <script src="./js/draw.js"></script>
+    <script src="./js/run.js"></script>
+    <script src="./js/check.js"></script>
+
+    <script text="text/javascript">
+      document.addEventListener("keydown", function (event) {
+        if (event.keyCode == 37) {
+          left = true;
+        } else if (event.keyCode == 39) {
+          right = true;
+        }
+      });
+      setcolor();
+      randomFirst();
+      run();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  </body>
+</html>
