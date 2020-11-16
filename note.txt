@@ -1,3 +1,33 @@
-x[] là chiều cao đáy của cột trong ngoặc
-xKhoi, yKhoi là vị trí đỉnh của khối đang hạ xuống
-ttt là giá trị return của random trong continue()
+bx, by:
+ - khai báo ở const.js
+ - vị trí của khối trên cùng bên trái.
+
+
+box:
+ - khai báo ở const.js
+ - run.js dòng 3
+ - thay đổi ở html
+ - dùng để xác định stt của khối
+
+xdwidth:
+ - khai báo ở check.js
+ - sử dụng ở run dòng 6
+ - dùng để xác định:
+  + a là chiều ngang
+  + b là vị trí đáy ứng với chiều ngang =0
+  + c ||                             || =1
+  + d ||                             || =2
+  + e ||                             || =3
+
+check:
+ - khai báo ở check.js dòng 97
+ - sử dụng ở run dòng 8
+ - dùng để xác định điều kiện rơi bằng màu ở đáy khối
+ - trả về true nếu đủ điều kiện
+
+gameover:
+ - khai bảo ở gameover.js
+ - xác định kết thúc chưa
+
+
+

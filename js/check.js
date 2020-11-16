@@ -93,24 +93,29 @@ function xdwidth() {
       d = 1;
   }
 }
+/////////////////////////////////
+function checkDot(xn, yn) {
+  if (color[yn + 4][xn] == gr) return true;
+  else return false;
+}
 
-function check() {
-  if (a == 1 && color[by + 4 + e][bx + 3] == gr) return true;
+/////////////////////////////////
+function check(x) {
+  if (a == 1 && color[by + 4 + e][x + 3] == gr) return true;
   if (
     a == 3 &&
-    color[by + 4 + b][bx] == gr &&
-    color[by + 4 + c][bx + 1] == gr &&
-    color[by + 4 + d][bx + 2] == gr
+    checkDot(x, by + b) &&
+    checkDot(x + 1, by + c) &&
+    checkDot(x + 2, by + d)
   )
     return true;
-  if (a == 2 && color[by + 4 + b][bx] == gr && color[by + 4 + c][bx + 1] == gr)
-    return true;
+  if (a == 2 && checkDot(x, by + b) && checkDot(x + 1, by + c)) return true;
   if (
     a == 4 &&
-    color[by + 4][bx + 0] == gr &&
-    color[by + 4][bx + 1] == gr &&
-    color[by + 4][bx + 2] == gr &&
-    color[by + 4][bx + 3] == gr
+    checkDot(x, by) &&
+    checkDot(x + 1, by) &&
+    checkDot(x + 2, by) &&
+    checkDot(x + 3, by)
   )
     return true;
   return false;

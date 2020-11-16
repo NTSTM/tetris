@@ -32,4 +32,5 @@ function random() {
 }
 function randomFirst() {
   next1 = Math.floor(Math.random() * 7) + 1;
+  next1 = 1;
 }

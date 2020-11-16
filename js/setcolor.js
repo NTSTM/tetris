@@ -226,6 +226,7 @@ function addcolor() {
       h1 = 0;
       break;
   }
+
   color[by + a1 + 4][bx + b1] = mau;
   color[by + c1 + 4][bx + d1] = mau;
   color[by + e1 + 4][bx + f1] = mau;

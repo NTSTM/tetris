@@ -38,10 +38,165 @@
 
     <script text="text/javascript">
       document.addEventListener("keydown", function (event) {
-        if (event.keyCode == 37) {
-          left = true;
-        } else if (event.keyCode == 39) {
-          right = true;
+        console.log(event.keyCode);
+        switch (event.keyCode) {
+          case 37:
+            if (bx > 0 && check(bx - 1)) {
+              switch (box) {
+                case 1:
+                  if (checkDot(bx + 1, by) == false) return 0;
+                  break;
+                case 2:
+                  if (checkDot(bx - 1, by) == false) return 0;
+                  break;
+                case 4:
+                  if (checkDot(bx, by) == false) return 0;
+                  break;
+                case 5:
+                  if (checkDot(bx, by) == false) return 0;
+                  break;
+                case 7:
+                  if (checkDot(bx - 1, by) == false) return 0;
+                  break;
+                case 31:
+                  if (checkDot(bx - 1, by) == false) return 0;
+                  break;
+                case 41:
+                  if (
+                    checkDot(bx - 1, by) == false ||
+                    checkDot(bx - 1, by + 1) == false
+                  )
+                    return 0;
+                  break;
+                case 22:
+                  if (
+                    checkDot(bx, by) == false ||
+                    checkDot(bx, by + 1) == false
+                  )
+                    return 0;
+                  break;
+                case 42:
+                  if (
+                    checkDot(bx - 1, by) == false ||
+                    checkDot(bx - 1, by + 1) == false
+                  )
+                    return 0;
+                  break;
+                case 23:
+                  if (
+                    checkDot(bx, by) == false ||
+                    checkDot(bx - 1, by + 1) == false
+                  )
+                    return 0;
+                  break;
+                case 24:
+                  if (checkDot(bx - 1, by) == false) return 0;
+                  break;
+                case 25:
+                  if (checkDot(bx, by) == false) return 0;
+                  break;
+                case 45:
+                  if (
+                    checkDot(bx - 1, by) == false ||
+                    checkDot(bx - 1, by + 1) == false
+                  )
+                    return 0;
+                  break;
+                case 26:
+                  if (
+                    checkDot(bx - 1, by) == false ||
+                    checkDot(bx - 1, by + 1) == false ||
+                    checkDot(bx - 1, by + 2) == false
+                  )
+                    return 0;
+                  break;
+              }
+              bx--;
+
+              if (check(bx)) {
+                ctx.clearRect(0, 0, 400, 800); /// xoá
+                setcolor(); // khôi phục màu sắc đáy
+                draw();
+              }
+            } else return 0;
+            break;
+          case 39:
+            if (bx < 10 - a && check(bx + 1)) {
+              switch (box) {
+                case 1:
+                  if (checkDot(bx + 3, by) == false) return 0;
+                  break;
+                case 2:
+                  if (checkDot(bx + 1, by) == false) return 0;
+                  break;
+                case 3:
+                  if (checkDot(bx + 2, by) == false) return 0;
+                  break;
+                case 5:
+                  if (checkDot(bx + 2, by) == false) return 0;
+                  break;
+                case 7:
+                  if (checkDot(bx + 2, by) == false) return 0;
+                  break;
+                case 21:
+                  if (
+                    checkDot(bx + 2, by) == false ||
+                    checkDot(bx + 2, by + 1) == false
+                  )
+                    return 0;
+                  break;
+                case 41:
+                  if (
+                    checkDot(bx + 1, by) == false ||
+                    checkDot(bx + 1, by + 1) == false
+                  )
+                    return 0;
+                  break;
+                case 22:
+                  if (
+                    checkDot(bx + 2, by) == false ||
+                    checkDot(bx + 2, by + 1) == false
+                  )
+                    return 0;
+                  break;
+                case 32:
+                  if (checkDot(bx + 3, by) == false) return 0;
+                  break;
+                case 23:
+                  if (checkDot(bx + 2, by) == false) return 0;
+                  break;
+                case 24:
+                  if (checkDot(bx + 1, by) == false) return 0;
+                  break;
+                case 25:
+                  if (
+                    checkDot(bx + 2, by) == false ||
+                    checkDot(bx + 2, by + 1) == false
+                  )
+                    return 0;
+                  break;
+                case 45:
+                  if (checkDot(bx + 1, by) == false) return 0;
+                  break;
+                case 26:
+                  if (
+                    checkDot(bx + 1, by) == false ||
+                    checkDot(bx + 1, by + 1) == false ||
+                    checkDot(bx + 1, by + 2) == false
+                  )
+                    return 0;
+                  break;
+              }
+              bx += 1;
+              if (check(bx)) {
+                ctx.clearRect(0, 0, 400, 800); /// xoá
+                setcolor(); // khôi phục màu sắc đáy
+                draw();
+              }
+            } else return 0;
+            break;
+          case 38:
+          case 40:
         }
       });
       setcolor();
